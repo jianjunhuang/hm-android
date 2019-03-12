@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <TextView
+          android:id="@+id/tv_wallet_name"
+          android:textStyle="bold"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="招商银行"
+          android:textSize="20sp"
+          android:textAppearance="@style/TextPrimaryAppearance"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+          android:id="@+id/tv_title_net_assets"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:gravity="center"
+          android:text="@string/wallet_net_assets"
+          android:textAppearance="@style/TextPrimaryAppearance"
+          android:textColor="#7C6F83"
+          app:layout_constraintEnd_toStartOf="@+id/tv_title_total_assets"
+          app:layout_constraintHorizontal_chainStyle="spread"
+          app:layout_constraintHorizontal_weight="1"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/tv_wallet_name"/>
+
+        <TextView
+          android:id="@+id/tv_net_assets"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:layout_marginEnd="8dp"
+          android:text="￥6,000"
+          android:textAppearance="@style/TextPrimaryAppearance"
+          android:textColor="#7C6F83"
+          app:layout_constraintEnd_toEndOf="@+id/tv_title_net_assets"
+          app:layout_constraintStart_toStartOf="@+id/tv_title_net_assets"
+          app:layout_constraintTop_toBottomOf="@+id/tv_title_net_assets"/>
+
+        <TextView
+          android:id="@+id/tv_title_total_assets"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="@string/wallet_total_assets"
+          android:textAppearance="@style/TextPrimaryAppearance"
+          android:textColor="@color/darkBlue"
+          app:layout_constraintEnd_toStartOf="@+id/tv_title_liability"
+          app:layout_constraintHorizontal_weight="1"
+          app:layout_constraintStart_toEndOf="@+id/tv_title_net_assets"
+          app:layout_constraintTop_toTopOf="@+id/tv_title_net_assets"/>
+
+        <TextView
+          android:id="@+id/tv_total_assets"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:text="￥5,000"
+          android:textAppearance="@style/TextPrimaryAppearance"
+          android:textColor="@color/darkBlue"
+          app:layout_constraintEnd_toEndOf="@+id/tv_title_total_assets"
+          app:layout_constraintStart_toStartOf="@+id/tv_title_total_assets"
+          app:layout_constraintTop_toBottomOf="@+id/tv_title_total_assets"/>
+
+        <TextView
+          android:id="@+id/tv_title_liability"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="@string/wallet_liability"
+          android:textAppearance="@style/TextPrimaryAppearance"
+          android:textColor="@color/expendRed"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_weight="1"
+          app:layout_constraintStart_toEndOf="@+id/tv_title_total_assets"
+          app:layout_constraintTop_toTopOf="@+id/tv_title_total_assets"/>
+
+        <TextView
+          android:id="@+id/tv_liability"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="￥10,000"
+          android:textAppearance="@style/TextPrimaryAppearance"
+          android:textColor="@color/expendRed"
+          app:layout_constraintEnd_toEndOf="@+id/tv_title_liability"
+          app:layout_constraintStart_toStartOf="@+id/tv_title_liability"
+          app:layout_constraintTop_toTopOf="@+id/tv_total_assets"/>
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+      android:id="@+id/fl_content"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"/>
+
+  </LinearLayout>
+</layout>

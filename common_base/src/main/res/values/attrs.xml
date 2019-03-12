@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="DotView">
+    <attr format="enum" name="dotStyle">
+      <enum name="round" value="0"/>
+      <enum name="rectangle" value="1"/>
+      <enum name="round_rectangle" value="2"/>
+    </attr>
+    <attr format="color" name="dotColor"/>
+  </declare-styleable>
+</resources>

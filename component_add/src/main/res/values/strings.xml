@@ -1,0 +1,8 @@
+<resources>
+  <string name="app_name">component_add</string>
+  <string name="add_wallet">Wallet</string>
+  <string name="add_type">Type</string>
+  <string name="add_money">Money</string>
+  <string name="add_date">Date</string>
+  <string name="add_title">Title</string>
+</resources>

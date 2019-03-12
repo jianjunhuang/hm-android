@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
+
+  <androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <TextView
+        android:id="@+id/tv_wallet_name"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="招商银行"
+        android:textAppearance="@style/TextPrimaryAppearance"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+      <TextView
+        android:id="@+id/tv_title_net_assets"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/wallet_net_assets"
+        android:textColor="#7C6F83"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_wallet_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_wallet_name"/>
+
+      <TextView
+        android:id="@+id/tv_net_assets"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="￥6,000"
+        android:textAppearance="@style/TextPrimaryAppearance"
+        android:textColor="#7C6F83"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_net_assets"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_net_assets"/>
+
+      <TextView
+        android:id="@+id/tv_title_total_assets"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/wallet_total_assets"
+        android:textColor="@color/darkBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_net_assets"
+        app:layout_constraintTop_toBottomOf="@+id/tv_net_assets"/>
+
+      <TextView
+        android:id="@+id/tv_total_assets"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="￥5,000"
+        android:textAppearance="@style/TextPrimaryAppearance"
+        android:textColor="@color/darkBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_total_assets"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_total_assets"/>
+
+
+      <TextView
+        android:id="@+id/tv_title_liability"
+        android:layout_width="0dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/wallet_liability"
+        android:textColor="@color/expendRed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_total_assets"
+        app:layout_constraintTop_toBottomOf="@+id/tv_total_assets"/>
+
+      <TextView
+        android:id="@+id/tv_liability"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="￥10,000"
+        android:textAppearance="@style/TextPrimaryAppearance"
+        android:textColor="@color/expendRed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_liability"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_liability"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.cardview.widget.CardView>
+
+</LinearLayout>

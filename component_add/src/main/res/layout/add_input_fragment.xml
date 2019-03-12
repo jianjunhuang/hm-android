@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+
+      <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+          android:id="@+id/tv_title_money"
+          android:layout_width="wrap_content"
+          android:textStyle="bold"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+          android:text="@string/add_money"
+          android:textAppearance="@style/TextPrimaryAppearance"/>
+
+        <TextView
+          android:id="@+id/tv_money"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="56dp"
+          android:layout_gravity="center_vertical"
+          android:text="￥ 0"
+          android:textAppearance="@style/TextSecondaryAppearance"/>
+      </FrameLayout>
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#dcdcdc"/>
+
+      <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+          android:id="@+id/tv_title_date"
+          android:layout_width="wrap_content"
+
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+          android:text="@string/add_date"
+          android:textAppearance="@style/TextPrimaryAppearance"/>
+
+        <TextView
+          android:id="@+id/tv_date"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="56dp"
+          android:layout_gravity="center_vertical"
+
+          android:text="2019/03/10 22:00"
+          android:textAppearance="@style/TextSecondaryAppearance"/>
+      </FrameLayout>
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#dcdcdc"/>
+
+
+      <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+          android:id="@+id/tv_title_title"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+
+          android:layout_gravity="center_vertical"
+          android:text="@string/add_title"
+          android:textAppearance="@style/TextPrimaryAppearance"/>
+
+        <EditText
+          android:id="@+id/tv_title"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="56dp"
+          android:layout_gravity="center_vertical"
+
+          android:background="@null"
+          android:text="xxxxxxx"
+          android:textAppearance="@style/TextSecondaryAppearance"/>
+      </FrameLayout>
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#dcdcdc"/>
+
+      <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+          android:id="@+id/tv_wallet"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/add_wallet"
+          android:textAppearance="@style/TextPrimaryAppearance"/>
+
+        <com.google.android.material.chip.ChipGroup
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="56dp"
+          app:singleSelection="true">
+
+          <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="招商银行"/>
+          <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="支付宝"/>
+          <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微信"/>
+          <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工商银行"/>
+
+        </com.google.android.material.chip.ChipGroup>
+      </FrameLayout>
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#dcdcdc"/>
+
+      <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+          android:id="@+id/tv_type"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/add_type"
+          android:textAppearance="@style/TextPrimaryAppearance"/>
+
+        <com.google.android.material.chip.ChipGroup
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="56dp"
+          app:singleSelection="true">
+
+          <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="零食"/>
+          <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="交通"/>
+          <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="数码"/>
+          <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="话费"/>
+
+        </com.google.android.material.chip.ChipGroup>
+      </FrameLayout>
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#dcdcdc"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="8dp"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toBottomOf="parent">
+
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"/>
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"/>
+
+        <ImageView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+
+          android:paddingTop="16dp"
+          android:paddingBottom="16dp"
+          android:background="?selectableItemBackground"
+          android:clickable="true"
+          android:scaleType="centerInside"
+          android:src="@drawable/ic_backspace"/>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:paddingTop="16dp"
+          android:paddingBottom="16dp"
+          android:background="?selectableItemBackground"
+          android:clickable="true"
+          android:gravity="center"
+          android:text="1"/>
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:paddingTop="16dp"
+
+          android:paddingBottom="16dp"
+          android:background="?selectableItemBackground"
+          android:clickable="true"
+          android:gravity="center"
+          android:text="2"/>
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:paddingTop="16dp"
+          android:paddingBottom="16dp"
+
+          android:background="?selectableItemBackground"
+          android:clickable="true"
+          android:gravity="center"
+          android:text="3"/>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:paddingTop="16dp"
+          android:paddingBottom="16dp"
+          android:background="?selectableItemBackground"
+
+          android:clickable="true"
+          android:gravity="center"
+          android:text="4"/>
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+
+          android:layout_weight="1"
+          android:paddingTop="16dp"
+          android:paddingBottom="16dp"
+          android:background="?selectableItemBackground"
+          android:clickable="true"
+          android:gravity="center"
+          android:text="5"/>
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:paddingTop="16dp"
+
+          android:paddingBottom="16dp"
+          android:background="?selectableItemBackground"
+          android:clickable="true"
+          android:gravity="center"
+          android:text="6"/>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:paddingTop="16dp"
+
+          android:paddingBottom="16dp"
+          android:background="?selectableItemBackground"
+          android:clickable="true"
+          android:gravity="center"
+          android:text="7"/>
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:paddingTop="16dp"
+          android:paddingBottom="16dp"
+
+          android:background="?selectableItemBackground"
+          android:clickable="true"
+          android:gravity="center"
+          android:text="8"/>
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:paddingTop="16dp"
+          android:paddingBottom="16dp"
+
+          android:background="?selectableItemBackground"
+          android:clickable="true"
+          android:gravity="center"
+          android:text="9"/>
+
+      </LinearLayout>
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:paddingTop="16dp"
+
+          android:paddingBottom="16dp"
+          android:background="?selectableItemBackground"
+          android:clickable="true"
+          android:gravity="center"
+          android:text="."/>
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:paddingTop="16dp"
+          android:paddingBottom="16dp"
+          android:background="?selectableItemBackground"
+
+          android:clickable="true"
+          android:gravity="center"
+          android:text="0"/>
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:paddingTop="16dp"
+          android:paddingBottom="16dp"
+          android:background="?selectableItemBackground"
+          android:clickable="true"
+          android:gravity="center"
+          android:text="Save"
+          android:textAppearance="@style/TextPrimaryAppearance"/>
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

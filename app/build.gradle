@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion rootProject.ext.versions.compileSdkVersion
+    defaultConfig {
+        applicationId rootProject.ext.versions.applicationId
+        minSdkVersion rootProject.ext.versions.minSdkVersion
+        targetSdkVersion rootProject.ext.versions.targetSdkVersion
+        versionCode rootProject.ext.versions.versionCode
+        versionName rootProject.ext.versions.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        //Arouter路由配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+                includeCompileClasspath = true
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    signingConfigs {
+        debug {
+            keyAlias 'how-much-debug'
+            keyPassword 'PYsy10980310'
+            storeFile file('../key/debug.jks')
+            storePassword 'PYsy10980310'
+        }
+
+        release {
+            keyAlias 'how-much-release'
+            keyPassword 'PYsy10980310'
+            storeFile file('../key/release.jks')
+            storePassword 'PYsy10980310'
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.debug
+
+        }
+    }
+}
+configurations.all {
+    resolutionStrategy.force 'com.android.support:support-annotations:27.1.1'
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':common_base')
+    if (!Boolean.valueOf(rootProject.ext.isModule)) {
+        //main模块
+        implementation project(':component_main')
+        implementation project(':component_overview')
+        implementation project(':component_wallet')
+        implementation project(':component_setting')
+        implementation project(':component_add')
+    }
+}

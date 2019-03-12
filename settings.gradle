@@ -1,0 +1,1 @@
+include ':app', ':common_base', ':component_main', ':component_overview', ':component_wallet', ':component_setting', ':component_add'

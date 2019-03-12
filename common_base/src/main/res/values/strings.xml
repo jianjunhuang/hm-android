@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">common_base</string>
+  <string name="font_medium">sans-serif-medium</string>
+  <string name="wallet_save">Save</string>
+</resources>

@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.jianjunhuang.wallet">
+
+  <application>
+    <activity android:name="com.jianjunhuang.wallet.WalletAddActivity"/>
+    <activity android:name="com.jianjunhuang.wallet.WalletDetailActivity"/>
+  </application>
+</manifest>
