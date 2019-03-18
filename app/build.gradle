@@ -7,7 +7,7 @@ android {
         targetSdkVersion rootProject.ext.versions.targetSdkVersion
         versionCode rootProject.ext.versions.versionCode
         versionName rootProject.ext.versions.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
 
         //Arouter路由配置
@@ -66,5 +66,6 @@ dependencies {
         implementation project(':component_wallet')
         implementation project(':component_setting')
         implementation project(':component_add')
+        implementation project(':component_bill')
     }
 }

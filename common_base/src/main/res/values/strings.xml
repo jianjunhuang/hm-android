@@ -2,4 +2,46 @@
   <string name="app_name">common_base</string>
   <string name="font_medium">sans-serif-medium</string>
   <string name="wallet_save">Save</string>
+  <string-array name="wallet_colors">
+    <item>#FEF8EF</item>
+    <item>#F0EDE6</item>
+    <item>#D7CBB0</item>
+    <item>#C5B8A5</item>
+
+    <item>#915457</item>
+    <item>#6A5457</item>
+    <item>#A8A3A9</item>
+    <item>#7D7084</item>
+
+    <item>#DCD8D9</item>
+    <item>#F9EADB</item>
+    <item>#B4B1A5</item>
+    <item>#9F9887</item>
+
+    <item>#A37E7F</item>
+    <item>#E8CFD3</item>
+    <item>#C7BED1</item>
+    <item>#EDE6F9</item>
+
+    <item>#C2C8DC</item>
+    <item>#AEADB2</item>
+    <item>#E1E3E0</item>
+    <item>#B6C3B2</item>
+
+    <item>#93908F</item>
+    <item>#C0BBC1</item>
+    <item>#DED5D6</item>
+    <item>#686369</item>
+
+    <item>#8A93A5</item>
+    <item>#9CA6B7</item>
+    <item>#95A38A</item>
+    <item>#7E8A73</item>
+
+    <item>#F0ECED</item>
+    <item>#FFFAF6</item>
+    <item>#D5D3CC</item>
+    <item>#E0CBD1</item>
+
+  </string-array>
 </resources>

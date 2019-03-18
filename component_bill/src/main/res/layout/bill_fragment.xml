@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:paddingTop="16dp"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp"
+      android:text="Date"
+      android:textAppearance="@style/TextPrimaryAppearance"
+      android:textSize="20sp"/>
+
+    <com.google.android.material.chip.ChipGroup
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="16dp">
+
+      <com.google.android.material.chip.Chip
+        style="@style/Widget.MaterialComponents.Chip.Action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year 2019"
+        app:chipIcon="@drawable/bill_ic_year"/>
+
+      <com.google.android.material.chip.Chip
+        style="@style/Widget.MaterialComponents.Chip.Action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="March"
+        app:chipIcon="@drawable/bill_ic_month"/>
+
+      <com.google.android.material.chip.Chip
+        style="@style/Widget.MaterialComponents.Chip.Action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 8"
+        app:chipIcon="@drawable/bill_ic_day"/>
+    </com.google.android.material.chip.ChipGroup>
+
+    <include layout="@layout/view_divider"/>
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:paddingTop="16dp"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp"
+      android:text="Wallet"
+      android:textAppearance="@style/TextPrimaryAppearance"
+      android:textSize="20sp"/>
+
+    <com.google.android.material.chip.ChipGroup
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="16dp">
+
+      <com.google.android.material.chip.Chip
+        style="@style/Widget.MaterialComponents.Chip.Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="招商银行"/>
+
+      <com.google.android.material.chip.Chip
+        style="@style/Widget.MaterialComponents.Chip.Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="支付宝"/>
+
+      <com.google.android.material.chip.Chip
+        style="@style/Widget.MaterialComponents.Chip.Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="微信"/>
+    </com.google.android.material.chip.ChipGroup>
+
+    <include layout="@layout/view_divider"/>
+
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:paddingTop="16dp"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp"
+      android:text="Type"
+      android:textAppearance="@style/TextPrimaryAppearance"
+      android:textSize="20sp"/>
+
+    <com.google.android.material.chip.ChipGroup
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="16dp">
+
+      <com.google.android.material.chip.Chip
+        style="@style/Widget.MaterialComponents.Chip.Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="零食"/>
+
+      <com.google.android.material.chip.Chip
+        style="@style/Widget.MaterialComponents.Chip.Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="交通"/>
+
+      <com.google.android.material.chip.Chip
+        style="@style/Widget.MaterialComponents.Chip.Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="饮食"/>
+    </com.google.android.material.chip.ChipGroup>
+
+    <include layout="@layout/view_divider"/>
+
+
+  </LinearLayout>
+</layout>
