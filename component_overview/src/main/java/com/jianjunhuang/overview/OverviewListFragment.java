@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView.State;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jianjunhuang.common_base.base.BaseFragment;
 import com.jianjunhuang.common_base.utils.SizeUtils;
-import com.jianjunhuang.overview.R;
+import com.jianjunhuang.component_overview.R;
 import com.jianjunhuang.overview.databinding.OverviewListFragmentBinding;
 import java.util.ArrayList;
 import java.util.List;

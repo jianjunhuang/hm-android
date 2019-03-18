@@ -2,7 +2,7 @@ package com.jianjunhuang.overview;
 
 import com.chad.library.adapter.base.BaseSectionQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.jianjunhuang.overview.R;
+import com.jianjunhuang.component_overview.R;
 
 public class OverviewAdapter extends BaseSectionQuickAdapter<ViewHolder, BaseViewHolder> {
 

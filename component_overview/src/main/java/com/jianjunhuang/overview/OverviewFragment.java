@@ -10,7 +10,7 @@ import androidx.databinding.DataBindingUtil;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jianjunhuang.common_base.base.BaseFragment;
 import com.jianjunhuang.common_base.utils.FragmentUtil;
-import com.jianjunhuang.overview.R;
+import com.jianjunhuang.component_overview.R;
 import com.jianjunhuang.overview.databinding.OverviewFragmentBinding;
 
 @Route(path = "/overview/fragment")
