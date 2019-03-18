@@ -36,7 +36,8 @@ public class AddFragment extends BaseFragment {
 
   class InputFragmentViewPagerAdapter extends FragmentPagerAdapter {
 
-    BaseFragment[] fragments = {new InputFragment(), new InputFragment()};
+    BaseFragment[] fragments = {InputFragment.newInstance(InputFragment.STYLE_EXPAND),
+        InputFragment.newInstance(InputFragment.STYLE_INCOME)};
     String[] titles = {"Expend", "Income"};
 
     public InputFragmentViewPagerAdapter(FragmentManager fm) {
