@@ -2,155 +2,34 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto">
 
-  <androidx.core.widget.NestedScrollView
+  <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <com.google.android.material.tabs.TabLayout
+      android:id="@+id/tab_layout"
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:orientation="vertical">
+      android:layout_height="?actionBarSize"/>
 
-      <FrameLayout
+    <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:layout_margin="16dp"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/bill_ic_filter_list"
+        app:fabSize="normal"/>
+    </FrameLayout>
 
-        <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center_vertical"
-          android:text="Date"
-          android:textAppearance="@style/TextPrimaryAppearance"
-          android:textSize="20sp"/>
+  </LinearLayout>
 
-        <com.google.android.material.chip.ChipGroup
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginStart="72dp"
-          android:layout_gravity="center_vertical">
-
-          <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Action"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Year 2019"
-            app:chipIcon="@drawable/bill_ic_year"/>
-
-          <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Action"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="March"
-            app:chipIcon="@drawable/bill_ic_month"/>
-
-          <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Action"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" 8"
-            app:chipIcon="@drawable/bill_ic_day"/>
-        </com.google.android.material.chip.ChipGroup>
-
-      </FrameLayout>
-
-
-      <include layout="@layout/view_divider"/>
-
-      <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:gravity="center_vertical">
-
-        <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center_vertical"
-          android:text="Wallet"
-          android:textAppearance="@style/TextPrimaryAppearance"
-          android:textSize="20sp"/>
-
-        <com.google.android.material.chip.ChipGroup
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginStart="72dp"
-          android:layout_gravity="center_vertical">
-
-          <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="招商银行"/>
-
-          <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="支付宝"/>
-
-          <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="微信"/>
-        </com.google.android.material.chip.ChipGroup>
-
-      </FrameLayout>
-
-
-      <include layout="@layout/view_divider"/>
-
-      <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Type"
-          android:textAppearance="@style/TextPrimaryAppearance"
-          android:textSize="20sp"/>
-
-        <com.google.android.material.chip.ChipGroup
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginStart="72dp">
-
-          <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="零食"/>
-
-          <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="交通"/>
-
-          <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="饮食"/>
-        </com.google.android.material.chip.ChipGroup>
-
-
-      </FrameLayout>
-
-      <include layout="@layout/view_divider"/>
-
-
-      <com.github.mikephil.charting.charts.BarChart
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-  </androidx.core.widget.NestedScrollView>
 </layout>

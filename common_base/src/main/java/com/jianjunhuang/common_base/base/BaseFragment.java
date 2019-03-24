@@ -9,6 +9,7 @@ public class BaseFragment extends Fragment {
 
   private boolean isLoad = false;
   private boolean isInit = false;
+  private String mTitle;
 
   /**
    * 是否可以加载数据 可以加载数据的条件： 1.视图已经初始化 2.视图对用户可见
@@ -44,5 +45,14 @@ public class BaseFragment extends Fragment {
   public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     isInit = true;
+  }
+
+  public String getTitle() {
+    return mTitle;
+  }
+
+  public BaseFragment setTitle(String mTitle) {
+    this.mTitle = mTitle;
+    return this;
   }
 }
