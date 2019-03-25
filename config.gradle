@@ -5,7 +5,7 @@ ext {
     //true 每个业务Module可以单独开发
     //false 每个业务Module以lib的方式运行
     //修改之后需要Sync方可生效
-    isModule = false
+    isModule = true
     //版本号
     versions = [
             applicationId           : "com.jianjunhuang.howmuch",        //应用ID
@@ -17,8 +17,8 @@ ext {
             minSdkVersion           : 19,
             targetSdkVersion        : 28,
 
-            androidSupportSdkVersion: "27.1.1",
-            constraintLayoutVersion : "1.1.1",
+            androidSupportSdkVersion: "1.0.0-beta01",
+            constraintLayoutVersion : "1.1.3",
             runnerVersion           : "1.0.1",
             espressoVersion         : "3.0.1",
             junitVersion            : "4.12",
@@ -36,21 +36,22 @@ ext {
             baseadapterVersion      : "2.9.46",
             rxandroidVersion        : "2.1.1",
             materialVersion         : "1.0.0",
+            mpchartVersion          : "v3.1.0-alpha",
     ]
     dependencies = [
-            "appcompat_v7"       : "com.android.support:appcompat-v7:${versions["androidSupportSdkVersion"]}",
-            "constraint_layout"  : "com.android.support.constraint:constraint-layout:${versions["constraintLayoutVersion"]}",
+            "appcompat_v7"       : "androidx.appcompat:appcompat:${versions["androidSupportSdkVersion"]}",
+            "constraint_layout"  : "androidx.constraintlayout:constraintlayout:${versions["constraintLayoutVersion"]}",
             "runner"             : "com.android.support.test:runner:${versions["runnerVersion"]}",
             "espresso_core"      : "com.android.support.test.espresso:espresso-core:${versions["espressoVersion"]}",
             "junit"              : "junit:junit:${versions["junitVersion"]}",
-            "support_annotations": "com.android.support:support-annotations:${versions["annotationsVersion"]}",
-            "design"             : "com.android.support:design:${versions["androidSupportSdkVersion"]}",
-            "support-v4"         : "com.android.support:support-v4:${versions["androidSupportSdkVersion"]}",
-            "cardview-v7"        : "com.android.support:cardview-v7:${versions["androidSupportSdkVersion"]}",
-            "recyclerview-v7"    : "com.android.support:recyclerview-v7:${versions["androidSupportSdkVersion"]}",
+            "support_annotations": "androidx.annotation:annotation:${versions["androidSupportSdkVersion"]}",
+            "design"             : "com.google.android.material:material:${versions["androidSupportSdkVersion"]}",
+            "support-v4"         : "androidx.legacy:legacy-support-v4:${versions["androidSupportSdkVersion"]}",
+            "cardview-v7"        : "androidx.cardview:cardview:${versions["androidSupportSdkVersion"]}",
+            "recyclerview-v7"    : "androidx.recyclerview:recyclerview:${versions["androidSupportSdkVersion"]}",
             "material"           : "com.google.android.material:material:${versions["materialVersion"]}",
             //方法数超过65535解决方法64K MultiDex分包方法
-            "multidex"           : "com.android.support:multidex:${versions["multidexVersion"]}",
+            "multidex"           : "androidx.multidex:multidex:2.0.0",
 
             //路由
             "arouter_api"        : "com.alibaba:arouter-api:${versions["arouterApiVersion"]}",
@@ -68,6 +69,7 @@ ext {
 
             "baseadapter"        : "com.github.CymChad:BaseRecyclerViewAdapterHelper:${versions["baseadapterVersion"]}",
             "rxandroid"          : "io.reactivex.rxjava2:rxandroid:${versions["rxandroidVersion"]}",
+            "mpchart"            : "com.github.PhilJay:MPAndroidChart:${versions["mpchartVersion"]}",
     ]
 
 }

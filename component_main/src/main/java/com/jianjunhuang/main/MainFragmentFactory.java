@@ -16,7 +16,7 @@ public class MainFragmentFactory {
       return (BaseFragment) ARouter.getInstance().build("/add/fragment").navigation();
     }
     if (id == R.id.menu_bill) {
-      return MockFragment.newInstance(3);
+      return (BaseFragment) ARouter.getInstance().build("/bill/fragment").navigation();
     }
     if (id == R.id.menu_settings) {
       return (BaseFragment) ARouter.getInstance().build("/setting/fragment").navigation();
