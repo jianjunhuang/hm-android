@@ -40,7 +40,6 @@ public class BillFragment extends BaseFragment {
             new BillChartFragment().setTitle("Histogram"));
     mBinding.viewPager
         .setAdapter(new ChartFragmentAdapter(getChildFragmentManager(), baseFragments));
-    mBinding.tabLayout.setupWithViewPager(mBinding.viewPager);
 
   }
 

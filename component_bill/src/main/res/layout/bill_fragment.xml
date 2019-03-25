@@ -2,34 +2,39 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto">
 
-  <LinearLayout
+
+  <FrameLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.tabs.TabLayout
-      android:id="@+id/tab_layout"
-      android:layout_width="match_parent"
-      android:layout_height="?actionBarSize"/>
-
-    <FrameLayout
+    <androidx.core.widget.NestedScrollView
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
-      <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
+      <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-      <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_gravity="bottom|end"
-        android:src="@drawable/bill_ic_filter_list"
-        app:fabSize="normal"/>
-    </FrameLayout>
+        <androidx.viewpager.widget.ViewPager
+          android:id="@+id/view_pager"
+          android:layout_width="match_parent"
+          android:layout_height="300dp"/>
 
-  </LinearLayout>
+        <FrameLayout
+          android:id="@+id/fl_list"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"/>
+      </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+      layout="@layout/bill_filter_layout"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      android:layout_gravity="bottom|end"/>
+
+  </FrameLayout>
 
 </layout>
