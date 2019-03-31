@@ -48,10 +48,13 @@
     </LinearLayout>
 
     <FrameLayout
+      android:id="@+id/fl_budget"
       android:layout_width="match_parent"
       android:layout_height="56dp"
       android:paddingStart="16dp"
-      android:paddingEnd="16dp">
+      android:paddingEnd="16dp"
+      android:background="?selectableItemBackground"
+      android:onClick="@{listener}">
 
       <TextView
         android:layout_width="wrap_content"

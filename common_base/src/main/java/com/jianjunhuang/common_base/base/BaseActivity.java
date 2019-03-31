@@ -1,5 +1,6 @@
 package com.jianjunhuang.common_base.base;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
@@ -16,5 +17,10 @@ public class BaseActivity extends AppCompatActivity {
     if (VERSION.SDK_INT >= VERSION_CODES.M) {
       getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
     }
+  }
+
+  public void startActivity(Class<? extends Activity> tClass) {
+    Intent intent = new Intent(this, tClass);
+    startActivity(intent);
   }
 }

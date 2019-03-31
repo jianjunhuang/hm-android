@@ -35,5 +35,9 @@ public class SettingFragment extends BaseFragment implements OnClickListener {
       RouterManager.Navigate.toAuth();
       return;
     }
+    if (id == R.id.fl_budget) {
+      startActivity(BudgetActivity.class);
+      return;
+    }
   }
 }

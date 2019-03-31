@@ -1,5 +1,7 @@
 package com.jianjunhuang.common_base.base;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import androidx.annotation.Nullable;
@@ -54,5 +56,10 @@ public class BaseFragment extends Fragment {
   public BaseFragment setTitle(String mTitle) {
     this.mTitle = mTitle;
     return this;
+  }
+
+  public void startActivity(Class<? extends Activity> tClass) {
+    Intent intent = new Intent(getActivity(), tClass);
+    startActivity(intent);
   }
 }
