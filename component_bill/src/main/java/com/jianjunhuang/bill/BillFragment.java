@@ -37,11 +37,11 @@ public class BillFragment extends BaseFragment {
     super.onViewCreated(view, savedInstanceState);
 
     List<BaseFragment> baseFragments = Arrays
-        .asList(new BillChartFragment().setTitle("Cal"), new BillChartFragment().setTitle("Pie"),
-            new BillChartFragment().setTitle("Histogram"));
+        .asList(new CalendarFragment().setTitle("Cal"), new PieFragment().setTitle("Pie"),
+            new HistogramFragment().setTitle("Histogram"));
     mBinding.viewPager
         .setAdapter(new ChartFragmentAdapter(getChildFragmentManager(), baseFragments));
-
+    mBinding.tabLayout.setupWithViewPager(mBinding.viewPager);
   }
 
   public static class ChartFragmentAdapter extends FragmentPagerAdapter {

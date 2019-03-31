@@ -5,11 +5,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <ViewStub
+      android:id="@+id/chart_view_stub"
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:gravity="center"
-      android:text="chart"/>
+      android:layout_height="wrap_content"
+      android:inflatedId="@+id/chart_view_stub"/>
+
+    <FrameLayout
+      android:id="@+id/fl_list"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"/>
 
   </LinearLayout>
 </layout>
