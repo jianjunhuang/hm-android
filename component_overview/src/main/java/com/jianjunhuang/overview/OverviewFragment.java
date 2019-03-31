@@ -9,11 +9,11 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jianjunhuang.common_base.base.BaseFragment;
+import com.jianjunhuang.common_base.router.RouterPath;
 import com.jianjunhuang.common_base.utils.FragmentUtil;
-import com.jianjunhuang.component_overview.R;
 import com.jianjunhuang.overview.databinding.OverviewFragmentBinding;
 
-@Route(path = "/overview/fragment")
+@Route(path = RouterPath.OVERVIEW_FRAGMENT)
 public class OverviewFragment extends BaseFragment {
 
   private OverviewFragmentBinding mBinding;

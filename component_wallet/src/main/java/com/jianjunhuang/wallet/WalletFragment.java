@@ -17,12 +17,13 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener;
 import com.jianjunhuang.common_base.base.BaseFragment;
+import com.jianjunhuang.common_base.router.RouterPath;
 import com.jianjunhuang.common_base.utils.SizeUtils;
 import com.jianjunhuang.wallet.databinding.WalletFragmentBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-@Route(path = "/wallet/fragment")
+@Route(path = RouterPath.WALLET_FRAGMENT)
 public class WalletFragment extends BaseFragment {
 
   private WalletFragmentBinding mBinding;

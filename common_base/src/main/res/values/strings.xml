@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">common_base</string>
+  <string name="app_name">base</string>
   <string name="font_medium">sans-serif-medium</string>
   <string name="wallet_save">Save</string>
   <string-array name="wallet_colors">

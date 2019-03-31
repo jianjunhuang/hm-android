@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">component_overview</string>
+  <string name="app_name">overview</string>
   <string name="overview_budget">Budget</string>
   <string name="overview_expend">Expend</string>
   <string name="overview_income">Income</string>

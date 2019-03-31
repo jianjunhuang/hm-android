@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">component_main</string>
+  <string name="app_name">main</string>
   <string name="main_home">Home</string>
   <string name="main_wallet">Wallet</string>
   <string name="main_add">Add</string>

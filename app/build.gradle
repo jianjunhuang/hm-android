@@ -67,5 +67,6 @@ dependencies {
         implementation project(':component_setting')
         implementation project(':component_add')
         implementation project(':component_bill')
+        implementation project(':component_auth')
     }
 }

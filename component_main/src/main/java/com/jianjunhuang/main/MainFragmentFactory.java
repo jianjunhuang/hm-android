@@ -1,25 +1,26 @@
 package com.jianjunhuang.main;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.jianjunhuang.common_base.base.BaseFragment;
+import com.jianjunhuang.common_base.router.RouterManager;
 
 public class MainFragmentFactory {
 
   public static BaseFragment createFragmentById(int id) {
     if (id == R.id.menu_home) {
-      return (BaseFragment) ARouter.getInstance().build("/overview/fragment").navigation();
+      return RouterManager.Fragment.overview();
     }
     if (id == R.id.menu_wallet) {
-      return (BaseFragment) ARouter.getInstance().build("/wallet/fragment").navigation();
+      return RouterManager.Fragment.wallet();
     }
     if (id == R.id.menu_add) {
-      return (BaseFragment) ARouter.getInstance().build("/add/fragment").navigation();
+      return RouterManager.Fragment.add();
     }
     if (id == R.id.menu_bill) {
-      return (BaseFragment) ARouter.getInstance().build("/bill/fragment").navigation();
+      return RouterManager.Fragment.bill();
     }
+
     if (id == R.id.menu_settings) {
-      return (BaseFragment) ARouter.getInstance().build("/setting/fragment").navigation();
+      return RouterManager.Fragment.setting();
     }
     return null;
   }

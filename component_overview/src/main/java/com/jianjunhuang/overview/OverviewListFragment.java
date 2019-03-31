@@ -17,13 +17,13 @@ import androidx.recyclerview.widget.RecyclerView.ItemDecoration;
 import androidx.recyclerview.widget.RecyclerView.State;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jianjunhuang.common_base.base.BaseFragment;
+import com.jianjunhuang.common_base.router.RouterPath;
 import com.jianjunhuang.common_base.utils.SizeUtils;
-import com.jianjunhuang.component_overview.R;
 import com.jianjunhuang.overview.databinding.OverviewListFragmentBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-@Route(path = "/overview/list/fragment")
+@Route(path = RouterPath.OVERVIEW_LIST_FRAGMENT)
 public class OverviewListFragment extends BaseFragment {
 
   private OverviewAdapter mAdapter;

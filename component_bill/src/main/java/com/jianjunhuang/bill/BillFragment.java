@@ -14,10 +14,11 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jianjunhuang.bill.databinding.BillFragmentBinding;
 import com.jianjunhuang.common_base.base.BaseFragment;
+import com.jianjunhuang.common_base.router.RouterPath;
 import java.util.Arrays;
 import java.util.List;
 
-@Route(path = "/bill/fragment")
+@Route(path = RouterPath.BILL_FRAGMENT)
 public class BillFragment extends BaseFragment {
 
   private BillFragmentBinding mBinding;

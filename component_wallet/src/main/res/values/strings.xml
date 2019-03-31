@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">component_wallet</string>
+  <string name="app_name">wallet</string>
   <string name="wallet_net_assets">Net assets</string>
   <string name="wallet_total_assets">Total assets</string>
   <string name="wallet_liability">Liability</string>
