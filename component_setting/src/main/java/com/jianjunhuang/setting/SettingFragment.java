@@ -39,5 +39,9 @@ public class SettingFragment extends BaseFragment implements OnClickListener {
       startActivity(BudgetActivity.class);
       return;
     }
+    if (id == R.id.fl_expenses) {
+      startActivity(RegularExpensesActivity.class);
+      return;
+    }
   }
 }

@@ -3,6 +3,8 @@
 
   <application>
     <activity android:name=".BudgetActivity"/>
+    <activity android:name=".RegularExpensesActivity"/>
+    <activity android:name=".AddRegularExpensesActivity"/>
   </application>
 
 </manifest>

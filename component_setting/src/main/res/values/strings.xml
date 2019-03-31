@@ -2,4 +2,7 @@
   <string name="app_name">setting</string>
   <string name="setting_budget">Budget</string>
   <string name="setting_update">update</string>
+  <string name="setting_regular_expenses">Regular Expenses</string>
+  <string name="setting_menu_expenses_title">add expenses</string>
+  <string name="setting_add_expenses">Add Regular Expenses</string>
 </resources>
