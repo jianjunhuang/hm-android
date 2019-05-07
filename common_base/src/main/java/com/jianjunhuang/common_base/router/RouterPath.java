@@ -12,4 +12,5 @@ public class RouterPath {
   public static final String OVERVIEW_LIST_FRAGMENT = "/overview/list/fragment";
 
 
+  public static final String WALLET_ACTIVITY = "/wallet/activity";
 }

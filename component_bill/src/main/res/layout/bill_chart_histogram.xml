@@ -4,11 +4,11 @@
   android:layout_height="wrap_content"
   android:orientation="vertical">
 
-  <TextView
+  <com.github.mikephil.charting.charts.LineChart
+    android:id="@+id/chart_list"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="56dp"
-    android:gravity="center"
-    android:text="Histogram"/>
+    android:layout_height="300dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"/>
 
 </LinearLayout>

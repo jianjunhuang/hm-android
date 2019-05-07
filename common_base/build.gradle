@@ -50,8 +50,11 @@ dependencies {
     api rootProject.ext.dependencies["glide"]
 
     api rootProject.ext.dependencies["rxjava"]
+    api rootProject.ext.dependencies["rxandroid"]
     api rootProject.ext.dependencies["retrofit"]
     api rootProject.ext.dependencies["okhttp"]
     api rootProject.ext.dependencies["baseadapter"]
     api rootProject.ext.dependencies["mpchart"]
+    api rootProject.ext.dependencies["gson"]
+    api project(":protocol")
 }

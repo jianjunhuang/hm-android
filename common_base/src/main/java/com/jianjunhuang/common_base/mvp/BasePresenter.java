@@ -15,13 +15,13 @@ public abstract class BasePresenter<V extends IView, M extends IModel> {
     mModel = null;
   }
 
-  abstract M createModel();
+  protected abstract M createModel();
 
-  public V getView() {
+  protected V getView() {
     return mView;
   }
 
-  public M getModel() {
+  protected M getModel() {
     return mModel;
   }
 }

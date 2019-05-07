@@ -3,6 +3,7 @@ package com.jianjunhuang.add;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,8 +11,9 @@ import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import com.jianjunhuang.add.databinding.AddInputFragmentBinding;
 import com.jianjunhuang.common_base.base.BaseFragment;
+import com.jianjunhuang.common_base.router.RouterManager;
 
-public class InputFragment extends BaseFragment {
+public class InputFragment extends BaseFragment implements OnClickListener {
 
   private AddInputFragmentBinding mBinding;
 
@@ -36,6 +38,7 @@ public class InputFragment extends BaseFragment {
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
     mBinding = DataBindingUtil.inflate(inflater, R.layout.add_input_fragment, container, false);
+    mBinding.setListener(this);
     return mBinding.getRoot();
   }
 
@@ -53,6 +56,16 @@ public class InputFragment extends BaseFragment {
     } else {
       mBinding.tvMoney.setTextColor(ContextCompat.getColor(getContext(), R.color.incomeGreen));
       mBinding.tvTitleMoney.setTextColor(ContextCompat.getColor(getContext(), R.color.incomeGreen));
+    }
+  }
+
+  @Override
+  public void onClick(View v) {
+    int id = v.getId();
+    if (id == R.id.chip_add_type) {
+      startActivity(AddTypeActivity.class);
+    } else if (id == R.id.chip_add_wallet) {
+      RouterManager.Navigate.toWalletAdd();
     }
   }
 }

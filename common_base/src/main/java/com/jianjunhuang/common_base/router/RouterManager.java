@@ -1,5 +1,6 @@
 package com.jianjunhuang.common_base.router;
 
+import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.jianjunhuang.common_base.base.BaseFragment;
 
@@ -11,8 +12,16 @@ public class RouterManager {
       ARouter.getInstance().build(url).navigation();
     }
 
+    public static Postcard with(String url) {
+      return ARouter.getInstance().build(url);
+    }
+
     public static void toAuth() {
       to(RouterPath.AUTH_ACTIVITY);
+    }
+
+    public static void toWalletAdd() {
+      to(RouterPath.WALLET_ACTIVITY);
     }
 
   }

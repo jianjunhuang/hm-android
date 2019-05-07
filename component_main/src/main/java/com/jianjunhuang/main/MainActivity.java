@@ -28,7 +28,9 @@ public class MainActivity extends BaseActivity {
 
   private void initBottomNavigation(BottomNavigationView bottomNavigation) {
     bottomNavigation.setOnNavigationItemSelectedListener(menuItem -> {
-      navigateToPager(menuItem.getItemId());
+      if (menuItem.getItemId() != mLastFragmentId) {
+        navigateToPager(menuItem.getItemId());
+      }
       return true;
     });
   }

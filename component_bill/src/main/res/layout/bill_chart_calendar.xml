@@ -4,11 +4,10 @@
   android:layout_height="wrap_content"
   android:orientation="vertical">
 
-  <TextView
+  <com.jianjunhuang.common_base.widget.cal.CalendarView
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="56dp"
-    android:gravity="center"
-    android:text="Calendar"/>
+    android:layout_height="300dp"/>
 
 </LinearLayout>

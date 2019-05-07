@@ -13,11 +13,14 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration;
 import androidx.recyclerview.widget.RecyclerView.State;
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jianjunhuang.common_base.base.BaseActivity;
+import com.jianjunhuang.common_base.router.RouterPath;
 import com.jianjunhuang.common_base.utils.SizeUtils;
 import com.jianjunhuang.wallet.databinding.WalletActivityAddBinding;
 import java.util.Arrays;
 
+@Route(path = RouterPath.WALLET_ACTIVITY)
 public class WalletAddActivity extends BaseActivity {
 
   private WalletActivityAddBinding mBinding;

@@ -6,12 +6,16 @@ import android.view.View.OnClickListener;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.jianjunhuang.auth.AuthContact.IAuthView;
 import com.jianjunhuang.auth.databinding.AuthActivityBinding;
 import com.jianjunhuang.common_base.base.BaseActivity;
+import com.jianjunhuang.common_base.base.BaseMVPActivity;
 import com.jianjunhuang.common_base.router.RouterPath;
+import com.jianjunhuang.common_base.utils.ToastUtils;
 
 @Route(path = RouterPath.AUTH_ACTIVITY)
-public class AuthActivity extends BaseActivity implements OnClickListener {
+public class AuthActivity extends BaseMVPActivity<AuthPresenter> implements OnClickListener,
+    IAuthView {
 
   private AuthActivityBinding mBinding;
 
@@ -25,10 +29,26 @@ public class AuthActivity extends BaseActivity implements OnClickListener {
   }
 
   @Override
+  protected AuthPresenter createPresenter() {
+    return new AuthPresenter();
+  }
+
+  @Override
   public void onClick(View v) {
     int id = v.getId();
     if (id == R.id.btn_login) {
-      //todo login
+      getPresenter()
+          .login(mBinding.edtEmail.getText().toString(), mBinding.edtCode.getText().toString());
     }
+  }
+
+  @Override
+  public void onLoginSuccess() {
+    finish();
+  }
+
+  @Override
+  public void onLoginFailed(String msg) {
+    ToastUtils.show(msg);
   }
 }

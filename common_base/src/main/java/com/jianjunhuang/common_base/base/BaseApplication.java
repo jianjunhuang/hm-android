@@ -3,6 +3,7 @@ package com.jianjunhuang.common_base.base;
 import android.app.Application;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.jianjunhuang.common_base.BuildConfig;
+import com.jianjunhuang.common_base.net.NetUtils;
 import com.jianjunhuang.common_base.utils.KeyboardUtil;
 import com.jianjunhuang.common_base.utils.SPUtils;
 import com.jianjunhuang.common_base.utils.SizeUtils;
@@ -18,6 +19,7 @@ public class BaseApplication extends Application {
     SizeUtils.init(this);
     KeyboardUtil.init(this);
     initARouter();
+    NetUtils.init("http://144.34.220.172:8080");
   }
 
   /**

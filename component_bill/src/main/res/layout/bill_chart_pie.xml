@@ -4,11 +4,9 @@
   android:layout_height="wrap_content"
   android:orientation="vertical">
 
-  <TextView
+  <com.github.mikephil.charting.charts.PieChart
+    android:id="@+id/pie_chart"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="56dp"
-    android:gravity="center"
-    android:text="Pie"/>
+    android:layout_height="300dp"/>
 
 </LinearLayout>
