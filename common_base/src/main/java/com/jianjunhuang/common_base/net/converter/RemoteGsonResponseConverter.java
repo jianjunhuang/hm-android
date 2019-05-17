@@ -26,7 +26,7 @@ final class RemoteGsonResponseConverter<T> implements Converter<ResponseBody, T>
     try {
       BaseResponse<T> basicResponse = gson.fromJson(response, new TypeToken<BaseResponse<T>>() {
       }.getType());
-      if (basicResponse.getCode() != 200) {
+      if (basicResponse.getCode() != 0) {
         throw new RemoteException(basicResponse.getCode(), basicResponse.getMsg());
       }
       if (basicResponse.getData() == null) {

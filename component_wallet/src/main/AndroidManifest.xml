@@ -2,7 +2,7 @@
   package="com.jianjunhuang.wallet">
 
   <application>
-    <activity android:name="com.jianjunhuang.wallet.WalletAddActivity"/>
-    <activity android:name="com.jianjunhuang.wallet.WalletDetailActivity"/>
+    <activity android:name=".view.WalletAddActivity"/>
+    <activity android:name=".WalletDetailActivity"/>
   </application>
 </manifest>

@@ -2,6 +2,7 @@
   <string name="app_name">base</string>
   <string name="font_medium">sans-serif-medium</string>
   <string name="wallet_save">Save</string>
+  <string name="money">￥%s</string>
   <string-array name="wallet_colors">
     <item>#FEF8EF</item>
     <item>#F0EDE6</item>

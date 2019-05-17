@@ -2,7 +2,7 @@ package com.jianjunhuang.howmuch.protocol;
 
 public class BaseRequest<T> {
 
-  private String token;
+  private String token = "ff8081816a932586016a932712a50000";
 
   private String appVersion;
 

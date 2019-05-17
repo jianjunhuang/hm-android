@@ -19,7 +19,7 @@ public class BaseApplication extends Application {
     SizeUtils.init(this);
     KeyboardUtil.init(this);
     initARouter();
-    NetUtils.init("http://144.34.220.172:8080");
+    NetUtils.init("http://192.168.31.130:8080/");
   }
 
   /**

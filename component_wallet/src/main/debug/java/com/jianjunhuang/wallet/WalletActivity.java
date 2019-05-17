@@ -1,9 +1,10 @@
-package com.jianjunhuang.overview;
+package com.jianjunhuang.wallet;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import com.jianjunhuang.common_base.base.BaseActivity;
 import com.jianjunhuang.common_base.utils.FragmentUtil;
+import com.jianjunhuang.wallet.view.WalletFragment;
 
 public class WalletActivity extends BaseActivity {
 

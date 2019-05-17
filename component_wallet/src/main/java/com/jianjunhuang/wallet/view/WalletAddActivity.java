@@ -1,4 +1,4 @@
-package com.jianjunhuang.wallet;
+package com.jianjunhuang.wallet.view;
 
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -15,13 +15,20 @@ import androidx.recyclerview.widget.RecyclerView.ItemDecoration;
 import androidx.recyclerview.widget.RecyclerView.State;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jianjunhuang.common_base.base.BaseActivity;
+import com.jianjunhuang.common_base.base.BaseMVPActivity;
 import com.jianjunhuang.common_base.router.RouterPath;
 import com.jianjunhuang.common_base.utils.SizeUtils;
+import com.jianjunhuang.common_base.utils.ToastUtils;
+import com.jianjunhuang.wallet.R;
+import com.jianjunhuang.wallet.WalletColorAdapter;
+import com.jianjunhuang.wallet.WalletContact.IAddView;
 import com.jianjunhuang.wallet.databinding.WalletActivityAddBinding;
+import com.jianjunhuang.wallet.presenter.AddPresenter;
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 @Route(path = RouterPath.WALLET_ACTIVITY)
-public class WalletAddActivity extends BaseActivity {
+public class WalletAddActivity extends BaseMVPActivity<AddPresenter> implements IAddView {
 
   private WalletActivityAddBinding mBinding;
   private WalletColorAdapter mAdapter;
@@ -33,6 +40,11 @@ public class WalletAddActivity extends BaseActivity {
     mBinding = DataBindingUtil.setContentView(this, R.layout.wallet_activity_add);
     initToolbar(mBinding.toolBar);
     initColorRecyclerView(mBinding.rvColor);
+  }
+
+  @Override
+  protected AddPresenter createPresenter() {
+    return new AddPresenter();
   }
 
   private void initToolbar(Toolbar toolBar) {
@@ -49,7 +61,11 @@ public class WalletAddActivity extends BaseActivity {
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     if (item.getItemId() == R.id.menu_save) {
-      finish();
+      String name = mBinding.edtName.getText().toString();
+      String netAssets = mBinding.edtNetAssets.getText().toString();
+      String liability = mBinding.edtLiability.getText().toString();
+      getPresenter().addWallet(name, netAssets, liability);
+      return true;
     }
     return super.onOptionsItemSelected(item);
   }
@@ -69,6 +85,16 @@ public class WalletAddActivity extends BaseActivity {
       }
     });
     mAdapter.addData(Arrays.asList(getResources().getStringArray(R.array.wallet_colors)));
+  }
+
+  @Override
+  public void onAddSuccess() {
+    ToastUtils.show("success");
+  }
+
+  @Override
+  public void onAddFailed(String reason) {
+    ToastUtils.show(reason);
   }
 
 }

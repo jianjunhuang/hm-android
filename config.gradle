@@ -5,7 +5,7 @@ ext {
     //true 每个业务Module可以单独开发
     //false 每个业务Module以lib的方式运行
     //修改之后需要Sync方可生效
-    isModule = false
+    isModule = true
     //版本号
     versions = [
             applicationId           : "com.jianjunhuang.howmuch",        //应用ID
@@ -31,6 +31,7 @@ ext {
             arouterannotationVersion: "1.0.4",
             glideVersion            : "4.8.0",
             okhttpVersion           : "3.13.1",
+            okhttpLoggingVersion    : "3.14.0",
             retrofitVersion         : "2.5.0",
             rxjavaVersion           : "2.2.7",
             baseadapterVersion      : "2.9.46",
@@ -65,6 +66,8 @@ ext {
             //network
             "okhttp"             : "com.squareup.okhttp3:okhttp:${versions["okhttpVersion"]}",
             "retrofit"           : "com.squareup.retrofit2:retrofit:${versions["retrofitVersion"]}",
+            "okhttp_logging"     : "com.squareup.okhttp3:logging-interceptor:${versions["okhttpLoggingVersion"]}",
+            "retrofit_rxjava"    : "com.squareup.retrofit2:adapter-rxjava2:${versions["retrofitVersion"]}",
 
             "rxjava"             : "io.reactivex.rxjava2:rxjava:${versions["rxjavaVersion"]}",
 
@@ -72,6 +75,7 @@ ext {
             "rxandroid"          : "io.reactivex.rxjava2:rxandroid:${versions["rxandroidVersion"]}",
             "mpchart"            : "com.github.PhilJay:MPAndroidChart:${versions["mpchartVersion"]}",
             "gson"               : "com.google.code.gson:gson:${versions["gsonVersion"]}",
+
     ]
 
 }

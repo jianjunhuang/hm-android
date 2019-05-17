@@ -1,5 +1,6 @@
 package com.jianjunhuang.common_base.utils;
 
+import androidx.annotation.StringRes;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
