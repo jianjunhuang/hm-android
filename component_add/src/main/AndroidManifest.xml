@@ -2,7 +2,6 @@
   package="com.jianjunhuang.add">
 
   <application>
-    <activity android:name=".AddTypeActivity"/>
   </application>
 
 </manifest>

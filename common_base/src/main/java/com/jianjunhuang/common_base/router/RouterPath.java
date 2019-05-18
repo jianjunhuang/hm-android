@@ -13,4 +13,5 @@ public class RouterPath {
 
 
   public static final String WALLET_ACTIVITY = "/wallet/activity";
+  public static final String TYPE_ACTIVITY = "/type/activity";
 }

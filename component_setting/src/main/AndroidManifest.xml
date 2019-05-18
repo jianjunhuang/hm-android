@@ -5,6 +5,9 @@
     <activity android:name=".BudgetActivity"/>
     <activity android:name=".RegularExpensesActivity"/>
     <activity android:name=".AddRegularExpensesActivity"/>
+    <activity
+      android:name=".view.TypeActivity"
+      android:windowSoftInputMode="adjustResize"/>
   </application>
 
 </manifest>

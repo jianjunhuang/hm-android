@@ -43,5 +43,9 @@ public class SettingFragment extends BaseFragment implements OnClickListener {
       startActivity(RegularExpensesActivity.class);
       return;
     }
+    if (id == R.id.fl_type) {
+      RouterManager.Navigate.toTypeAdd();
+      return;
+    }
   }
 }

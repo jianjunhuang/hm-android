@@ -5,4 +5,5 @@
   <string name="setting_regular_expenses">Regular Expenses</string>
   <string name="setting_menu_expenses_title">add expenses</string>
   <string name="setting_add_expenses">Add Regular Expenses</string>
+  <string name="setting_type">Type</string>
 </resources>

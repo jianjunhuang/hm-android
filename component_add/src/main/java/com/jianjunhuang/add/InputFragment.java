@@ -63,7 +63,7 @@ public class InputFragment extends BaseFragment implements OnClickListener {
   public void onClick(View v) {
     int id = v.getId();
     if (id == R.id.chip_add_type) {
-      startActivity(AddTypeActivity.class);
+      RouterManager.Navigate.toTypeAdd();
     } else if (id == R.id.chip_add_wallet) {
       RouterManager.Navigate.toWalletAdd();
     }

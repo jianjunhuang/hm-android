@@ -24,6 +24,10 @@ public class RouterManager {
       to(RouterPath.WALLET_ACTIVITY);
     }
 
+    public static void toTypeAdd() {
+      to(RouterPath.TYPE_ACTIVITY);
+    }
+
   }
 
   public static class Fragment {
