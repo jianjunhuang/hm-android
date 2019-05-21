@@ -13,6 +13,7 @@ import com.jianjunhuang.common_base.base.BaseFragment;
 import com.jianjunhuang.common_base.router.RouterManager;
 import com.jianjunhuang.common_base.router.RouterPath;
 import com.jianjunhuang.setting.databinding.SettingFragmentBinding;
+import com.jianjunhuang.setting.view.BudgetActivity;
 
 @Route(path = RouterPath.SETTING_FRAGMENT)
 public class SettingFragment extends BaseFragment implements OnClickListener {

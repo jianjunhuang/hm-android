@@ -17,7 +17,7 @@
         <action android:name="android.intent.action.MAIN"/>
       </intent-filter>
     </activity>
-    <activity android:name=".BudgetActivity"/>
+    <activity android:name=".view.BudgetActivity"/>
     <activity android:name=".RegularExpensesActivity"/>
     <activity android:name=".AddRegularExpensesActivity"/>
     <activity

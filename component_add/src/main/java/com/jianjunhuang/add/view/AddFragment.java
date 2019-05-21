@@ -1,4 +1,4 @@
-package com.jianjunhuang.add;
+package com.jianjunhuang.add.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.jianjunhuang.add.R;
 import com.jianjunhuang.add.databinding.AddFragmentBinding;
 import com.jianjunhuang.common_base.base.BaseFragment;
 import com.jianjunhuang.common_base.router.RouterPath;

@@ -2,6 +2,7 @@ package com.jianjunhuang.add;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;
+import com.jianjunhuang.add.view.AddFragment;
 import com.jianjunhuang.common_base.base.BaseActivity;
 import com.jianjunhuang.common_base.utils.FragmentUtil;
 

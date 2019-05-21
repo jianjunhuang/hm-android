@@ -2,7 +2,7 @@
   package="com.jianjunhuang.setting">
 
   <application>
-    <activity android:name=".BudgetActivity"/>
+    <activity android:name=".view.BudgetActivity"/>
     <activity android:name=".RegularExpensesActivity"/>
     <activity android:name=".AddRegularExpensesActivity"/>
     <activity

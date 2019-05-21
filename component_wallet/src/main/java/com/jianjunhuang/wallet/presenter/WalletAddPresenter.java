@@ -12,7 +12,7 @@ import io.reactivex.schedulers.Schedulers;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class AddPresenter extends BasePresenter<IAddView, IWalletModel> {
+public class WalletAddPresenter extends BasePresenter<IAddView, IWalletModel> {
 
   @Override
   protected IWalletModel createModel() {

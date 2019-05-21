@@ -1,6 +1,8 @@
 package com.jianjunhuang.common_base.widget;
 
 import android.content.Context;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import androidx.annotation.NonNull;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
@@ -26,8 +28,13 @@ public abstract class ChipsAdapter<T> {
 
   public void addData(List<T> data) {
     checkList();
-    for (T t : data) {
-      addData(t);
+    mDatas = data;
+    checkList();
+    for (int i = 0; i < mDatas.size(); i++) {
+      Chip chip = new Chip(mContext);
+      bindCheckListener(chip, mDatas.get(i), mDatas.size() - 1);
+      convert(mChipGroup, chip, mDatas.get(i), i);
+      mChipGroup.addView(chip);
     }
   }
 
@@ -48,6 +55,7 @@ public abstract class ChipsAdapter<T> {
     check();
     mDatas.add(data);
     Chip chip = new Chip(mContext);
+    bindCheckListener(chip, data, mDatas.size() - 1);
     convert(mChipGroup, chip, data, mDatas.size() - 1);
     mChipGroup.addView(chip);
   }
@@ -81,7 +89,9 @@ public abstract class ChipsAdapter<T> {
 
   private void check() {
     if (mChipGroup.getChildCount() != mDatas.size()) {
-      throw new ConcurrentModificationException("ChipGroup and List size not match");
+      throw new IllegalArgumentException(String
+          .format("ChipGroup and List size not match ChipGroup size = %d , list size = %d",
+              mChipGroup.getChildCount(), mDatas.size()));
     }
   }
 
@@ -116,4 +126,34 @@ public abstract class ChipsAdapter<T> {
     }
   }
 
+  public List<T> getData() {
+    checkList();
+    return mDatas;
+  }
+
+  protected Context getContext() {
+    return mContext;
+  }
+
+  protected void bindCheckListener(final Chip chip, final T data, final int pos) {
+    chip.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+      @Override
+      public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if (mOnChipCheckListener != null) {
+          mOnChipCheckListener.onChipCheck(chip, data, pos);
+        }
+      }
+    });
+  }
+
+  private OnChipCheckListener mOnChipCheckListener;
+
+  public void setOnChipCheckListener(OnChipCheckListener<T> onChipCheckListener) {
+    mOnChipCheckListener = onChipCheckListener;
+  }
+
+  public interface OnChipCheckListener<T> {
+
+    void onChipCheck(Chip chip, T data, int pos);
+  }
 }

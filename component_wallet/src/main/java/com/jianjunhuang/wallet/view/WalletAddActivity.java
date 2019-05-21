@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration;
 import androidx.recyclerview.widget.RecyclerView.State;
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.jianjunhuang.common_base.base.BaseActivity;
 import com.jianjunhuang.common_base.base.BaseMVPActivity;
 import com.jianjunhuang.common_base.router.RouterPath;
 import com.jianjunhuang.common_base.utils.SizeUtils;
@@ -23,12 +22,11 @@ import com.jianjunhuang.wallet.R;
 import com.jianjunhuang.wallet.WalletColorAdapter;
 import com.jianjunhuang.wallet.WalletContact.IAddView;
 import com.jianjunhuang.wallet.databinding.WalletActivityAddBinding;
-import com.jianjunhuang.wallet.presenter.AddPresenter;
-import java.math.BigDecimal;
+import com.jianjunhuang.wallet.presenter.WalletAddPresenter;
 import java.util.Arrays;
 
 @Route(path = RouterPath.WALLET_ACTIVITY)
-public class WalletAddActivity extends BaseMVPActivity<AddPresenter> implements IAddView {
+public class WalletAddActivity extends BaseMVPActivity<WalletAddPresenter> implements IAddView {
 
   private WalletActivityAddBinding mBinding;
   private WalletColorAdapter mAdapter;
@@ -43,8 +41,8 @@ public class WalletAddActivity extends BaseMVPActivity<AddPresenter> implements 
   }
 
   @Override
-  protected AddPresenter createPresenter() {
-    return new AddPresenter();
+  protected WalletAddPresenter createPresenter() {
+    return new WalletAddPresenter();
   }
 
   private void initToolbar(Toolbar toolBar) {

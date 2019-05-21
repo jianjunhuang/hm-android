@@ -14,7 +14,7 @@ import io.reactivex.schedulers.Schedulers;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class OverviewPresenter extends BasePresenter<IOverviewView, IWalletModel> {
+public class WalletOverviewPresenter extends BasePresenter<IOverviewView, IWalletModel> {
 
   private BigDecimal mTotal;
   private BigDecimal mLiability;

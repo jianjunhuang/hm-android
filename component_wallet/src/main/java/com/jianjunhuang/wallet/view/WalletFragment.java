@@ -5,12 +5,9 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupMenu;
-import android.widget.PopupMenu.OnMenuItemClickListener;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -19,8 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration;
 import androidx.recyclerview.widget.RecyclerView.State;
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseQuickAdapter.OnItemLongClickListener;
 import com.jianjunhuang.common_base.base.BaseMVPFragment;
 import com.jianjunhuang.common_base.router.RouterPath;
 import com.jianjunhuang.common_base.utils.CurrencyUtils;
@@ -32,13 +27,13 @@ import com.jianjunhuang.wallet.WalletContact.IOverviewView;
 import com.jianjunhuang.wallet.WalletDetailActivity;
 import com.jianjunhuang.wallet.WalletViewHolder;
 import com.jianjunhuang.wallet.databinding.WalletFragmentBinding;
-import com.jianjunhuang.wallet.presenter.OverviewPresenter;
+import com.jianjunhuang.wallet.presenter.WalletOverviewPresenter;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 @Route(path = RouterPath.WALLET_FRAGMENT)
-public class WalletFragment extends BaseMVPFragment<OverviewPresenter> implements IOverviewView {
+public class WalletFragment extends BaseMVPFragment<WalletOverviewPresenter> implements IOverviewView {
 
   private WalletFragmentBinding mBinding;
   private WalletAdapter mAdapter;
@@ -146,7 +141,7 @@ public class WalletFragment extends BaseMVPFragment<OverviewPresenter> implement
   }
 
   @Override
-  protected OverviewPresenter createPresenter() {
-    return new OverviewPresenter();
+  protected WalletOverviewPresenter createPresenter() {
+    return new WalletOverviewPresenter();
   }
 }

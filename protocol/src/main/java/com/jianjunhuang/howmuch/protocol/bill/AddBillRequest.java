@@ -5,58 +5,67 @@ import java.util.List;
 
 public class AddBillRequest {
 
-    private String email;
-    private String walletId;
-    private BigDecimal money;
-    private String memo;
-    private String position;
-    private List<String> typeIds;
+  private String walletId;
+  private BigDecimal money;
+  private String memo;
+  private String position;
+  private List<String> typeIds;
+  private Long date;
+  private String title;
 
-    public String getEmail() {
-        return email;
-    }
+  public String getTitle() {
+    return title;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
-    public String getWalletId() {
-        return walletId;
-    }
+  public Long getDate() {
+    return date;
+  }
 
-    public void setWalletId(String walletId) {
-        this.walletId = walletId;
-    }
+  public void setDate(Long date) {
+    this.date = date;
+  }
 
-    public BigDecimal getMoney() {
-        return money;
-    }
+  public String getWalletId() {
+    return walletId;
+  }
 
-    public void setMoney(BigDecimal money) {
-        this.money = money;
-    }
+  public void setWalletId(String walletId) {
+    this.walletId = walletId;
+  }
 
-    public String getMemo() {
-        return memo;
-    }
+  public BigDecimal getMoney() {
+    return money;
+  }
 
-    public void setMemo(String memo) {
-        this.memo = memo;
-    }
+  public void setMoney(BigDecimal money) {
+    this.money = money;
+  }
 
-    public String getPosition() {
-        return position;
-    }
+  public String getMemo() {
+    return memo;
+  }
 
-    public void setPosition(String position) {
-        this.position = position;
-    }
+  public void setMemo(String memo) {
+    this.memo = memo;
+  }
 
-    public List<String> getTypeIds() {
-        return typeIds;
-    }
+  public String getPosition() {
+    return position;
+  }
 
-    public void setTypeIds(List<String> typeIds) {
-        this.typeIds = typeIds;
-    }
+  public void setPosition(String position) {
+    this.position = position;
+  }
+
+  public List<String> getTypeIds() {
+    return typeIds;
+  }
+
+  public void setTypeIds(List<String> typeIds) {
+    this.typeIds = typeIds;
+  }
 }

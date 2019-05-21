@@ -39,6 +39,7 @@ ext {
             materialVersion         : "1.0.0",
             mpchartVersion          : "v3.1.0-alpha",
             gsonVersion             : "2.8.5",
+            datePickerVersion       : "2.0",
     ]
     dependencies = [
             "appcompat_v7"       : "androidx.appcompat:appcompat:${versions["androidSupportSdkVersion"]}",
@@ -75,6 +76,7 @@ ext {
             "rxandroid"          : "io.reactivex.rxjava2:rxandroid:${versions["rxandroidVersion"]}",
             "mpchart"            : "com.github.PhilJay:MPAndroidChart:${versions["mpchartVersion"]}",
             "gson"               : "com.google.code.gson:gson:${versions["gsonVersion"]}",
+            "date_picker"        : "com.github.Kunzisoft:Android-SwitchDateTimePicker:${versions["datePickerVersion"]}",
 
     ]
 
