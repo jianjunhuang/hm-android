@@ -54,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/wallet_net_assets"
-            android:inputType="number"/>
+            android:inputType="numberDecimal"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/wallet_liability"
-            android:inputType="number"/>
+            android:inputType="numberDecimal"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

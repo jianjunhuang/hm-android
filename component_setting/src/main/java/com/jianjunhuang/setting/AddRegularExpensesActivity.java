@@ -21,7 +21,7 @@ public class AddRegularExpensesActivity extends BaseActivity {
     mBinding = DataBindingUtil.setContentView(this, R.layout.setting_add_expenses_activity);
     setSupportActionBar(mBinding.toolBar);
     mBinding.toolBar.setNavigationOnClickListener(v -> finish());
-    FragmentUtil.replace(getSupportFragmentManager(), RouterManager.Fragment.add(),
+    FragmentUtil.replace(getSupportFragmentManager(), RouterManager.Fragment.add(true),
         R.id.fl_add);
   }
 

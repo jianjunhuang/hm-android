@@ -22,28 +22,38 @@ public class AddFragment extends BaseFragment {
 
   private AddFragmentBinding mBinding;
 
+  private InputFragment expend;
+  private InputFragment income;
+
   @Nullable
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
     mBinding = DataBindingUtil.inflate(inflater, R.layout.add_fragment, container, false);
+    boolean isRegular = false;
+    if (getArguments() != null) {
+      isRegular = getArguments().getBoolean("data");
+    }
+    expend = InputFragment.newInstance(InputFragment.STYLE_EXPAND, isRegular);
+    income = InputFragment.newInstance(InputFragment.STYLE_INCOME,isRegular);
     initViewPager(mBinding.viewPager);
     return mBinding.getRoot();
   }
 
   private void initViewPager(ViewPager viewPager) {
-    viewPager.setAdapter(new InputFragmentViewPagerAdapter(getChildFragmentManager()));
+    viewPager
+        .setAdapter(new InputFragmentViewPagerAdapter(getChildFragmentManager(), expend, income));
     mBinding.tabLayout.setupWithViewPager(viewPager);
   }
 
   class InputFragmentViewPagerAdapter extends FragmentPagerAdapter {
 
-    BaseFragment[] fragments = {InputFragment.newInstance(InputFragment.STYLE_EXPAND),
-        InputFragment.newInstance(InputFragment.STYLE_INCOME)};
+    BaseFragment[] fragments;
     String[] titles = {"Expend", "Income"};
 
-    public InputFragmentViewPagerAdapter(FragmentManager fm) {
+    public InputFragmentViewPagerAdapter(FragmentManager fm, BaseFragment... baseFragments) {
       super(fm);
+      fragments = baseFragments;
     }
 
     @Override

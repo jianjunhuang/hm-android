@@ -1,6 +1,8 @@
 package com.jianjunhuang.add.view;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -40,6 +42,7 @@ public class InputFragment extends BaseMVPFragment<AddPresenter> implements OnCl
   public static final String STYLE_INCOME = "style_income";
 
   private static final String KEY_STYLE = "key_style";
+  private static final String KEY_REGULAR = "key_regular";
 
   private TypeAdapter mTypeAdapter;
   private WalletAdapter mWalletAdapter;
@@ -52,9 +55,12 @@ public class InputFragment extends BaseMVPFragment<AddPresenter> implements OnCl
 
   private BigDecimal mZero = new BigDecimal(0);
 
-  public static InputFragment newInstance(String style) {
+  private boolean isRegular = false;
+
+  public static InputFragment newInstance(String style, boolean isRegular) {
     Bundle args = new Bundle();
     args.putString(KEY_STYLE, style);
+    args.putBoolean(KEY_REGULAR, isRegular);
     InputFragment fragment = new InputFragment();
     fragment.setArguments(args);
     return fragment;
@@ -75,6 +81,7 @@ public class InputFragment extends BaseMVPFragment<AddPresenter> implements OnCl
     Bundle bundle = getArguments();
     if (bundle != null) {
       mStyle = bundle.getString(KEY_STYLE);
+      isRegular = bundle.getBoolean(KEY_REGULAR);
     }
 
     if (STYLE_EXPAND.equals(mStyle)) {
@@ -131,10 +138,16 @@ public class InputFragment extends BaseMVPFragment<AddPresenter> implements OnCl
       return;
     }
     if (id == R.id.fab_add) {
+      if (mBinding.edtMoney.getText() == null || TextUtils
+          .isEmpty(mBinding.edtMoney.getText().toString())) {
+        ToastUtils.show("please input money");
+        return;
+      }
       BigDecimal money = new BigDecimal(mBinding.edtMoney.getText().toString());
+      Log.i("InputFragment", "onDyClick: " + mNowDate.toString());
       getPresenter()
           .addBill(mStyle.equals(STYLE_EXPAND) ? mZero.subtract(money) : money,
-              mBinding.edtTitle.getText().toString(), mNowDate.getTime());
+              mBinding.edtTitle.getText().toString(), mNowDate.getTime(), isRegular);
     }
   }
 

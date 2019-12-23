@@ -3,6 +3,9 @@ package com.jianjunhuang.common_base.router;
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.jianjunhuang.common_base.base.BaseFragment;
+import com.jianjunhuang.howmuch.protocol.bill.BillResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RouterManager {
 
@@ -44,8 +47,10 @@ public class RouterManager {
       return get(RouterPath.WALLET_FRAGMENT);
     }
 
-    public static BaseFragment add() {
-      return get(RouterPath.ADD_FRAGMENT);
+    public static BaseFragment add(boolean isRegular) {
+      return (BaseFragment) ARouter.getInstance().build(RouterPath.ADD_FRAGMENT)
+          .withBoolean("data", isRegular)
+          .navigation();
     }
 
     public static BaseFragment bill() {
@@ -56,8 +61,10 @@ public class RouterManager {
       return get(RouterPath.SETTING_FRAGMENT);
     }
 
-    public static BaseFragment overviewList() {
-      return get(RouterPath.OVERVIEW_LIST_FRAGMENT);
+    public static BaseFragment overviewList(ArrayList<BillResponse> billResponses) {
+      return (BaseFragment) ARouter.getInstance().build(RouterPath.OVERVIEW_LIST_FRAGMENT)
+          .withParcelableArrayList("data", billResponses)
+          .navigation();
     }
   }
 

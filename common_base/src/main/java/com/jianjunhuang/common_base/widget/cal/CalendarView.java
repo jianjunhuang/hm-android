@@ -355,7 +355,9 @@ public class CalendarView extends View implements BaseCalendarAdapter.OnDataChan
             int month = getCal().get(Calendar.MONTH) + 1;
 
             mItemList.clear();
-            mItemList = mAdapter.getItemData(year, month, day, mItemList);
+            if (mAdapter != null) {
+              mItemList = mAdapter.getItemData(year, month, day, mItemList);
+            }
             onDayClickListener.onDyClick(year, month, day, mItemList);
           }
         }

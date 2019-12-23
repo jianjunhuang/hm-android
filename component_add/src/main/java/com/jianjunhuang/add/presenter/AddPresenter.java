@@ -15,6 +15,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -75,7 +77,7 @@ public class AddPresenter extends BasePresenter<AddContact.IAddView, AddContact.
     }
   }
 
-  public void addBill(BigDecimal money, String title, long date) {
+  public void addBill(BigDecimal money, String title, long date, boolean isRegular) {
     if (TextUtils.isEmpty(title)) {
       getView().onAddFailed("title is empty!");
       return;
@@ -86,6 +88,7 @@ public class AddPresenter extends BasePresenter<AddContact.IAddView, AddContact.
     request.setTitle(title);
     request.setDate(date);
     request.setMoney(money);
+    request.setTag(isRegular ? 1 : 0);
     getModel().addBill(request)
         .observeOn(AndroidSchedulers.mainThread())
         .subscribeOn(Schedulers.io())

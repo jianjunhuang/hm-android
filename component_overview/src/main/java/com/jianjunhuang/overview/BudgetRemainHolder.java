@@ -1,6 +1,6 @@
 package com.jianjunhuang.overview;
 
-class BudgetRemainHolder {
+public class BudgetRemainHolder {
 
   private String type;
   private int times;

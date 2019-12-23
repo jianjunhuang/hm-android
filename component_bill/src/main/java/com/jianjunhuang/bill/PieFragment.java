@@ -4,27 +4,35 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import androidx.annotation.Nullable;
-import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.MPPointF;
+import com.jianjunhuang.bill.view.BillChartFragment;
+import com.jianjunhuang.common_base.rxjava.NetworkObserver;
+import com.jianjunhuang.howmuch.protocol.bill.BillResponse;
+import com.jianjunhuang.howmuch.protocol.bill.TypeExpend;
 import java.util.ArrayList;
+import java.util.List;
 
 public class PieFragment extends BillChartFragment {
 
   private String[] parties = {"wechat", "alipay", "招商", "cash"};
+
+  private PieChart pieChart;
 
   @Override
   public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     mBinding.chartViewStub.getViewStub().setLayoutResource(R.layout.bill_chart_pie);
     mBinding.chartViewStub.getViewStub().inflate();
-    PieChart pieChart = mBinding.getRoot().findViewById(R.id.pie_chart);
+    pieChart = mBinding.getRoot().findViewById(R.id.pie_chart);
     pieChart.setUsePercentValues(true);
     pieChart.getDescription().setEnabled(false);
     pieChart.setExtraOffsets(5, 10, 5, 5);
@@ -64,18 +72,45 @@ public class PieFragment extends BillChartFragment {
     // entry label styling
     pieChart.setEntryLabelColor(Color.WHITE);
     pieChart.setEntryLabelTextSize(12f);
+    pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+      @Override
+      public void onValueSelected(Entry e, Highlight h) {
+        // e.getX()方法得到x数据
+        PieEntry pieEntry = (PieEntry) e;
+        TypeExpend typeExpend = (TypeExpend) pieEntry.getData();
+        getPresenter().queryBillsByType(typeExpend.getTypeId());
+      }
 
-    setData(pieChart, 10f);
+      @Override
+      public void onNothingSelected() {
+      }
+    });
   }
 
-  private void setData(PieChart chart, float range) {
+  @Override
+  public void onResume() {
+    super.onResume();
+    getPresenter().queryTypeBills().subscribe(new NetworkObserver<List<TypeExpend>>() {
+      @Override
+      public void onError(String msg, int code) {
+
+      }
+
+      @Override
+      public void onNext(List<TypeExpend> typeExpends) {
+        setData(pieChart, typeExpends);
+      }
+    });
+  }
+
+  private void setData(PieChart chart, List<TypeExpend> typeExpends) {
     ArrayList<PieEntry> entries = new ArrayList<>();
 
     // NOTE: The order of the entries when being added to the entries array determines their position around the center of
     // the chart.
-    for (int i = 0; i < 4; i++) {
-      entries.add(new PieEntry((float) ((Math.random() * range) + range / 5),
-          parties[i]));
+    for (int i = 0; i < typeExpends.size(); i++) {
+      entries.add(new PieEntry(typeExpends.get(i).getExpend().abs().floatValue(),
+          typeExpends.get(i).getType(), typeExpends.get(i)));
     }
 
     PieDataSet dataSet = new PieDataSet(entries, "");

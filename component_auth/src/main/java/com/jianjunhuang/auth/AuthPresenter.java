@@ -1,8 +1,10 @@
 package com.jianjunhuang.auth;
 
+import android.text.TextUtils;
 import com.jianjunhuang.auth.AuthContact.IAuthModel;
 import com.jianjunhuang.auth.AuthContact.IAuthView;
 import com.jianjunhuang.common_base.mvp.BasePresenter;
+import com.jianjunhuang.common_base.rxjava.NetworkObserver;
 import com.jianjunhuang.howmuch.protocol.user.LoginRequest;
 import com.jianjunhuang.howmuch.protocol.user.User;
 import io.reactivex.Observer;
@@ -47,4 +49,24 @@ public class AuthPresenter extends BasePresenter<IAuthView, IAuthModel> {
         });
   }
 
+  public void send(String email) {
+    if (TextUtils.isEmpty(email)) {
+      getView().onSendFailed("email is empty");
+      return;
+    }
+    getModel().getCode(email)
+        .subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(new NetworkObserver<String>() {
+          @Override
+          public void onError(String msg, int code) {
+            getView().onSendFailed(msg);
+          }
+
+          @Override
+          public void onNext(String s) {
+            getView().onSendSuccess();
+          }
+        });
+  }
 }

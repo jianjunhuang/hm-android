@@ -15,10 +15,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration;
 import androidx.recyclerview.widget.RecyclerView.State;
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.jianjunhuang.common_base.base.BaseFragment;
 import com.jianjunhuang.common_base.router.RouterPath;
 import com.jianjunhuang.common_base.utils.SizeUtils;
+import com.jianjunhuang.howmuch.protocol.bill.BillResponse;
 import com.jianjunhuang.overview.databinding.OverviewListFragmentBinding;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +31,8 @@ public class OverviewListFragment extends BaseFragment {
 
   private OverviewAdapter mAdapter;
   private OverviewListFragmentBinding mBinding;
+
+  List<BillResponse> billResponses;
 
   public static OverviewListFragment newInstance() {
 
@@ -42,7 +47,9 @@ public class OverviewListFragment extends BaseFragment {
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
+    ARouter.getInstance().inject(this);
     mBinding = DataBindingUtil.inflate(inflater, R.layout.overview_list_fragment, container, false);
+    billResponses = getArguments().getParcelableArrayList("data");
     initRecyclerView(mBinding.rvOverview);
     return mBinding.getRoot();
   }
@@ -52,23 +59,6 @@ public class OverviewListFragment extends BaseFragment {
     mAdapter = new OverviewAdapter();
     rvOverview.setAdapter(mAdapter);
     rvOverview.addItemDecoration(new ItemDecoration() {
-
-      Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-
-      @Override
-      public void onDraw(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull State state) {
-        super.onDraw(c, parent, state);
-        paint.setColor(Color.parseColor("#9e9e9e"));
-        for (int i = 0; i < parent.getChildCount(); i++) {
-          View view = parent.getChildAt(i);
-          int pos = parent.getChildAdapterPosition(view);
-          if (pos % 5 == 0 && pos != 0) {
-            c.drawLine(0, view.getTop(), view.getWidth(),
-                view.getTop(), paint);
-          }
-        }
-      }
-
       @Override
       public void getItemOffsets(@NonNull Rect outRect, @NonNull View view,
           @NonNull RecyclerView parent, @NonNull State state) {
@@ -77,11 +67,13 @@ public class OverviewListFragment extends BaseFragment {
       }
     });
     List<ViewHolder> viewHolders = new ArrayList<>();
-    for (int i = 0; i < 50; i++) {
+    for (int i = 0; i < billResponses.size(); i++) {
       ViewHolder viewHolder;
-      viewHolder = new ViewHolder(i % 5 == 0, "");
+      viewHolder = new ViewHolder(false, "");
+      viewHolder.t = billResponses.get(i);
       viewHolders.add(viewHolder);
     }
-    mAdapter.addData(viewHolders);
+    mAdapter.replaceData(viewHolders);
+    mAdapter.notifyDataSetChanged();
   }
 }

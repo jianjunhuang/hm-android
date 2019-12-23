@@ -21,6 +21,8 @@ public class Wallet implements Parcelable {
     createDate = in.readLong();
     updateDate = in.readLong();
     walletId = in.readString();
+    total = new BigDecimal(in.readString());
+    liability = new BigDecimal(in.readString());
   }
 
   public static final Creator<Wallet> CREATOR = new Creator<Wallet>() {
@@ -94,5 +96,7 @@ public class Wallet implements Parcelable {
     dest.writeLong(createDate);
     dest.writeLong(updateDate);
     dest.writeString(walletId);
+    dest.writeString(total.toString());
+    dest.writeString(liability.toString());
   }
 }

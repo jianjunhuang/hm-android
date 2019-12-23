@@ -5,9 +5,10 @@
   android:orientation="vertical">
 
   <com.jianjunhuang.common_base.widget.cal.CalendarView
+    android:id="@+id/calendar_view"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
     android:layout_width="match_parent"
-    android:layout_height="300dp"/>
+    android:layout_height="250dp"/>
 
 </LinearLayout>

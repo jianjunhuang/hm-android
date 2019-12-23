@@ -39,6 +39,8 @@ public class AuthActivity extends BaseMVPActivity<AuthPresenter> implements OnCl
     if (id == R.id.btn_login) {
       getPresenter()
           .login(mBinding.edtEmail.getText().toString(), mBinding.edtCode.getText().toString());
+    } else if (id == R.id.iv_send) {
+      getPresenter().send(mBinding.edtEmail.getText().toString());
     }
   }
 
@@ -50,5 +52,15 @@ public class AuthActivity extends BaseMVPActivity<AuthPresenter> implements OnCl
   @Override
   public void onLoginFailed(String msg) {
     ToastUtils.show(msg);
+  }
+
+  @Override
+  public void onSendFailed(String msg) {
+    ToastUtils.show(msg);
+  }
+
+  @Override
+  public void onSendSuccess() {
+    ToastUtils.show("send!");
   }
 }

@@ -13,6 +13,10 @@ public interface AuthContact {
     void onLoginSuccess();
 
     void onLoginFailed(String msg);
+
+    void onSendFailed(String msg);
+
+    void onSendSuccess();
   }
 
   interface IAuthModel extends IModel {
@@ -20,6 +24,8 @@ public interface AuthContact {
     Observable<User> login(LoginRequest request);
 
     void saveUser(User user);
+
+    Observable<String> getCode(String email);
 
   }
 

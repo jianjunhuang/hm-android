@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import com.jianjunhuang.common_base.base.BaseActivity;
 import com.jianjunhuang.common_base.base.BaseMVPActivity;
+import com.jianjunhuang.common_base.utils.KeyboardUtil;
 import com.jianjunhuang.common_base.utils.ToastUtils;
 import com.jianjunhuang.setting.R;
 import com.jianjunhuang.setting.contact.BudgetContact.IBudgetView;
@@ -56,6 +57,7 @@ public class BudgetActivity extends BaseMVPActivity<BudgetPresenter> implements 
   @Override
   public void onBudget(BigDecimal budget) {
     mBinding.edtBudget.setText(budget.toPlainString());
+    KeyboardUtil.hideSoftInput(this);
   }
 
   @Override

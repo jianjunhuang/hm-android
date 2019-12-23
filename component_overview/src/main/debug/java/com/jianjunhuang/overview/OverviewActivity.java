@@ -4,6 +4,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import com.jianjunhuang.common_base.base.BaseActivity;
 import com.jianjunhuang.common_base.utils.FragmentUtil;
+import com.jianjunhuang.overview.view.OverviewFragment;
 
 public class OverviewActivity extends BaseActivity {
 

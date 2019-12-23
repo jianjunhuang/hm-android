@@ -11,4 +11,7 @@ public interface AuthService {
   @POST("/login")
   Observable<User> login(@Body LoginRequest request);
 
+  @POST("/send")
+  Observable<String> send(@Body String email);
+
 }

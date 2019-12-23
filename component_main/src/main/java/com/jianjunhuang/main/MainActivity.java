@@ -55,4 +55,14 @@ public class MainActivity extends BaseActivity {
     transaction.commit();
   }
 
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
+
+  }
+
+  @Override
+  protected void onResume() {
+    super.onResume();
+  }
 }

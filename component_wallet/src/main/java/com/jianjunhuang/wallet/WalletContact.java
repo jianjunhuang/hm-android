@@ -2,6 +2,7 @@ package com.jianjunhuang.wallet;
 
 import com.jianjunhuang.common_base.mvp.IModel;
 import com.jianjunhuang.common_base.mvp.IView;
+import com.jianjunhuang.howmuch.protocol.bill.BillResponse;
 import com.jianjunhuang.howmuch.protocol.wallet.Wallet;
 import io.reactivex.Observable;
 import java.math.BigDecimal;
@@ -33,7 +34,7 @@ public interface WalletContact {
 
     Observable<List<Wallet>> queryWallets();
 
-    void queryBillsById(String walletId);
+    Observable<List<BillResponse>> queryBillsById(String walletId);
 
     Observable<Wallet> addWallet(Wallet wallet);
 

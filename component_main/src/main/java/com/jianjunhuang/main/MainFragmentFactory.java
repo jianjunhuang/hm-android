@@ -13,7 +13,7 @@ public class MainFragmentFactory {
       return RouterManager.Fragment.wallet();
     }
     if (id == R.id.menu_add) {
-      return RouterManager.Fragment.add();
+      return RouterManager.Fragment.add(false);
     }
     if (id == R.id.menu_bill) {
       return RouterManager.Fragment.bill();

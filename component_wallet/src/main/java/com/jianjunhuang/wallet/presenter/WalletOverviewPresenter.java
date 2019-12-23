@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import com.jianjunhuang.common_base.mvp.BasePresenter;
 import com.jianjunhuang.common_base.rxjava.NetworkObserver;
 import com.jianjunhuang.common_base.rxjava.NetworkSingleObserver;
+import com.jianjunhuang.howmuch.protocol.bill.BillResponse;
 import com.jianjunhuang.wallet.WalletContact.IOverviewView;
 import com.jianjunhuang.wallet.WalletContact.IWalletModel;
 import com.jianjunhuang.wallet.WalletViewHolder;
@@ -75,5 +76,20 @@ public class WalletOverviewPresenter extends BasePresenter<IOverviewView, IWalle
         });
   }
 
+  public void queryBillResponse(String walletId) {
+    getModel().queryBillsById(walletId)
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribeOn(Schedulers.io())
+        .subscribe(new NetworkObserver<List<BillResponse>>() {
+          @Override
+          public void onError(String msg, int code) {
+
+          }
+
+          @Override
+          public void onNext(List<BillResponse> billResponses) {
+          }
+        });
+  }
 
 }

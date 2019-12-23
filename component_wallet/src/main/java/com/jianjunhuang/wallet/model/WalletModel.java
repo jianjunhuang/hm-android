@@ -1,6 +1,8 @@
 package com.jianjunhuang.wallet.model;
 
 import com.jianjunhuang.common_base.net.NetUtils;
+import com.jianjunhuang.howmuch.protocol.bill.BillByWalletRequest;
+import com.jianjunhuang.howmuch.protocol.bill.BillResponse;
 import com.jianjunhuang.howmuch.protocol.wallet.Wallet;
 import com.jianjunhuang.wallet.WalletContact.IWalletModel;
 import io.reactivex.Observable;
@@ -20,8 +22,10 @@ public class WalletModel implements IWalletModel {
   }
 
   @Override
-  public void queryBillsById(String walletId) {
-
+  public Observable<List<BillResponse>> queryBillsById(String walletId) {
+    BillByWalletRequest request = new BillByWalletRequest();
+    request.setWalletId(walletId);
+    return mWalletService.queryBillsByWallet(request);
   }
 
   @Override

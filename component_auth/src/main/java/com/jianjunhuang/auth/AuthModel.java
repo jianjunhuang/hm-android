@@ -26,4 +26,9 @@ public class AuthModel implements AuthContact.IAuthModel {
     Gson gson = new Gson();
     SPUtils.instance(SPKey.FILE_USER).store(SPKey.KEY_USER, gson.toJson(user));
   }
+
+  @Override
+  public Observable<String> getCode(String email) {
+    return mService.send(email);
+  }
 }
